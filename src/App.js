@@ -1,9 +1,11 @@
-
+import Home from "./pages/Home";
+import Game from "./components/Game";
 
 function App() {
+ 
   return (
     <div className="App">
-     <h1>Hello Ignite</h1>
+     <Home/>
     </div>
   );
 }

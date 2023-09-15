@@ -1,6 +1,7 @@
-//Base URL
+// import env from "react-dotenv";
 require('dotenv').config();
-const key = process.env.RAWG_API
+//Base URL
+const key = process.env.REACT_APP_RAWG_API;
 const base_url = `https://api.rawg.io/api/`;
 
 //Getting the month
@@ -31,5 +32,8 @@ const nextYear = `${currentYear+1}-${currentMonth}-${currentDay}`;
 
 //Popular games url
 const popular_games = `games?key=${key}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
-
+const upcoming_games = `games?key=${key}&dates=${currentDate},${nextYear}&ordering=-added&page_size=10`;
+const newGames = `games?key=${key}&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
 export const popularGamesURL = () => `${base_url}${popular_games}`;
+export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
+export const newGamesURL = () => `${base_url}${newGames}`;
