@@ -37,3 +37,7 @@ const newGames = `games?key=${key}&dates=${lastYear},${currentDate}&ordering=-re
 export const popularGamesURL = () => `${base_url}${popular_games}`;
 export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${newGames}`;
+
+//Creating the api url for games details
+export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}.json?key=${key}`;
+// https://api.rawg.io/api/games/795632.json?&key=420db7a0848d47d3b21e4093f9ee5f46
