@@ -40,4 +40,4 @@ export const newGamesURL = () => `${base_url}${newGames}`;
 
 //Creating the api url for games details
 export const gameDetailsURL = (game_id) => `${base_url}games/${game_id}.json?key=${key}`;
-// https://api.rawg.io/api/games/795632.json?&key=420db7a0848d47d3b21e4093f9ee5f46
+export const gameScreenshotsURL = (game_id) => `${base_url}games/${game_id}/screenshots?&key=${key}`;
