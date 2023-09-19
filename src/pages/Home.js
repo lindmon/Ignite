@@ -11,7 +11,6 @@ import {motion} from 'framer-motion';
 const Home = () => {
     const location = useLocation();
     const pathId = location.pathname.split("/")[2];
-    console.log(pathId);
 //Fetching the Games data
 
   const dispatch = useDispatch();
