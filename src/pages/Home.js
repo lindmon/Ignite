@@ -6,7 +6,7 @@ import {loadGames} from '../actions/gamesAction';
 import { useLocation } from 'react-router-dom';
 //Styling and animation
 import styled from 'styled-components';
-import {motion} from 'framer-motion';
+import {motion, AnimatePresence, LayoutGroup} from 'framer-motion';
 
 const Home = () => {
     const location = useLocation();
@@ -22,7 +22,10 @@ const {popular, newGames, upcoming} = useSelector(state => state.games);
 
   return (
     <GameList>
-        {pathId && <GameDetail/>}
+        <LayoutGroup type="crossfade">
+        <AnimatePresence>
+        {pathId && <GameDetail pathId={pathId}/>}
+        </AnimatePresence>
         <h2>Upcoming Games</h2>
         <Games>
             {upcoming.map((game) => (
@@ -35,6 +38,7 @@ const {popular, newGames, upcoming} = useSelector(state => state.games);
                 />
             ))}
         </Games>
+        </LayoutGroup>
         <h2>Popular Games</h2>
         <Games>
             {popular.map((game) => (
